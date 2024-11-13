@@ -1,48 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import ThreadList from './components/ThreadManagement/ThreadList';
-import UserManagement from './components/UserManagement';
-import ReportManagement from './components/ReportManagement';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage';            
+import Login from '/src/Login';                
+import Register from '/src/Register';        
+import ThreadList from './components/ThreadManagement/ThreadList'; 
+import Navbar from './components/HomePage/Navbar';               
+import Footer from './components/HomePage/Footer';
+import ThreadPage from './components/HomePage/ThreadPage'; 
 
-const Threads = () => (
-  <div>
-    <ThreadList />
-  </div>
+const App = () => (
+  <Router>
+    <div className="bg-gray-100 min-h-screen p-8">
+      <Navbar /> {/* Navbar överst på sidan för navigering */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} /> 
+        <Route path="/threads" element={<ThreadList />}/>
+        <Route path="/thread/:id" element={<ThreadPage />} />
+      </Routes>
+      <Footer/>
+    </div>
+  </Router>
 );
-
-const App = () => {
-  return (
-    <Router>
-      <div className="bg-gray-100 min-h-screen p-8">
-        <nav className="mb-6 flex justify-end space-x-4">
-          <Link 
-            to="/" 
-            className="px-4 py-2 rounded-md bg-white text-gray-900 font-semibold border border-gray-300 hover:bg-gray-200"
-          >
-            Trådhantering
-          </Link>
-          <Link 
-            to="/user-management" 
-            className="px-4 py-2 rounded-md bg-white text-gray-900 font-semibold border border-gray-300 hover:bg-gray-200"
-          >
-            Användarhantering
-          </Link>
-          <Link 
-            to="/report-management" 
-            className="px-4 py-2 rounded-md bg-white text-gray-900 font-semibold border border-gray-300 hover:bg-gray-200"
-          >
-            Rapporthantering
-          </Link>
-        </nav>
-        
-        <Routes>
-          <Route path="/" element={<Threads />} />
-          <Route path="/user-management" element={<UserManagement />} />
-          <Route path="/report-management" element={<ReportManagement />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-};
 
 export default App;

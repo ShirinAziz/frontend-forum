@@ -6,6 +6,7 @@ const ThreadList = () => {
   const [threads, setThreads] = useState([]);
   const [editingThread, setEditingThread] = useState(null);
 
+
   const isAdmin = true; // Detta är mockad admin-status
 
   useEffect(() => {
