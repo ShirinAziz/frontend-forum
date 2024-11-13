@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "username": "code_master",
+      "email": "one@example.com",
+      "isBlocked": false,
+      "isWarned": false
+    },
+    {
+      "id": 2,
+      "username": "frontend_ninja",
+      "email": "two@example.com",
+      "isBlocked": true,
+      "isWarned": false
+    },
+    {
+      "id": 3,
+      "username": "fullstack_dev",
+      "email": "three@example.com",
+      "isBlocked": false,
+      "isWarned": true
+    }
+  ]
+  
