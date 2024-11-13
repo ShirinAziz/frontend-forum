@@ -1,0 +1,6 @@
+[
+    { "id": 1, "content": "Detta inlägg bryter mot reglerna.", "reportedBy": "backend_master", "status": "Ny" },
+    { "id": 2, "content": "Anstötligt språk i detta inlägg.", "reportedBy": "frontend_star", "status": "Ny" },
+    { "id": 3, "content": "Spam-innehåll som behöver tas bort.", "reportedBy": "react_king", "status": "Hantera" }
+  ]
+  

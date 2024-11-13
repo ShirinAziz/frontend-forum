@@ -5,11 +5,11 @@ import EditThread from './EditThread';
 const ThreadList = () => {
   const [threads, setThreads] = useState([]);
   const [editingThread, setEditingThread] = useState(null);
-  
-  const isAdmin = true; // Mockad admin-status. Här kan man ändra till "false" för att se hur det ser ut för vanliga användare.
+
+  const isAdmin = true; // Detta är mockad admin-status
 
   useEffect(() => {
-
+    // Här hämtas mockade trådar
     setThreads(threadsData);
   }, []);
 
@@ -28,9 +28,15 @@ const ThreadList = () => {
     setThreads(threads.filter(thread => thread.id !== id));
   };
 
+  const handleToggleStatus = (thread) => {
+    setThreads(threads.map(t => 
+      t.id === thread.id ? { ...t, is_closed: !t.is_closed } : t
+    ));
+  };
+
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">.</h2>
+    <div className="p-6 bg-white shadow-md rounded-md">
+      <h2 className="text-2xl font-bold mb-4 text-neutral">Trådhantering</h2>
       <ul>
         {threads.map((thread) => (
           <li key={thread.id} className="bg-base-200 shadow-md rounded-md p-4 mb-4">
@@ -40,13 +46,16 @@ const ThreadList = () => {
             
             {isAdmin && (
               <div className="mt-4 space-x-2">
-                <button onClick={() => handleEdit(thread)} className="btn btn-primary">
+                <button onClick={() => handleEdit(thread)} className="btn btn-info">
                   Redigera
                 </button>
                 <button onClick={() => handleDelete(thread.id)} className="btn btn-error">
                   Ta bort
                 </button>
-                <button className={`btn ${thread.is_closed ? 'btn-secondary' : 'btn-success'}`}>
+                <button 
+                  onClick={() => handleToggleStatus(thread)} 
+                  className={`btn ${thread.is_closed ? 'btn-secondary' : 'btn-success'}`}
+                >
                   {thread.is_closed ? "Öppna" : "Stäng"}
                 </button>
               </div>
