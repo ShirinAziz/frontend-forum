@@ -56,7 +56,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="navbar-end">{/* Ta bort knappen "Kontakta oss" */}</div>
+      <div className="navbar-end"></div>
     </div>
   );
 };
