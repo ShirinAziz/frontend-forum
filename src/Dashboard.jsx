@@ -5,8 +5,7 @@ import UserManagement from "./components/UserManagement";
 import ReportManagement from "./components/ReportManagement";
 import Login from "./Login";
 
-
-//Fejk dashboard med trådhantering, användarhantering , rapporthantering efter att användare har loggat in 
+//Fejk dashboard med trådhantering, användarhantering , rapporthantering efter att användare har loggat in
 const Dashboard = () => {
   const { isLoggedIn, logout } = useContext(FakeLoginContext);
 

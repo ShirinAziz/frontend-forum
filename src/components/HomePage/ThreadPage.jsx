@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import threadsData from '../../mockData/threads.json'; 
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import threadsData from "../../mockData/threads.json";
 
 const ThreadPage = () => {
   const { id } = useParams(); // Hämta trådens ID från URL:en
@@ -8,7 +8,9 @@ const ThreadPage = () => {
   const navigate = useNavigate(); // För att navigera tillbaka till listan
 
   useEffect(() => {
-    const selectedThread = threadsData.find((thread) => thread.id === parseInt(id)); // Hitta tråden baserat på ID
+    const selectedThread = threadsData.find(
+      (thread) => thread.id === parseInt(id)
+    ); // Hitta tråden baserat på ID
     setThread(selectedThread);
   }, [id]);
 
@@ -18,10 +20,14 @@ const ThreadPage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <button onClick={() => navigate(-1)} className="btn btn-dark mb-4">Tillbaka</button> 
+      <button onClick={() => navigate(-1)} className="btn btn-dark mb-4">
+        Tillbaka
+      </button>
       <h1 className="text-3xl font-bold mb-4">{thread.title}</h1>
       <p className="text-gray-600">{thread.content}</p>
-      <small className="text-gray-500">Skapad av: {thread.author} | {thread.created_at}</small>
+      <small className="text-gray-500">
+        Skapad av: {thread.author} | {thread.created_at}
+      </small>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State för att hantera om menyn är öppen
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
@@ -33,6 +33,7 @@ const Navbar = () => {
               />
             </svg>
           </div>
+          {/* Dropdown-menyn som visas om `isMenuOpen` är sant */}
           {isMenuOpen && (
             <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
               <li>

@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { FakeLoginContext } from "./FakeLoginProvider";
 
+// Login-komponenten hanterar användarinloggning
 const Login = () => {
-  const { login } = useContext(FakeLoginContext);
+  const { login } = useContext(FakeLoginContext); // Hämtar login-funktionen från FakeLoginContext
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
