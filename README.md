@@ -20,7 +20,8 @@
 React ,
 React Router ,
 Tailwind CSS (ihop med DaisyUI) , 
-JSON-server (eller backend API i framtiden)
+JSON-server (eller backend API i framtiden) , Vite – Byggverktyg för snabb utveckling och bundling , 
+@vitejs/plugin-react – React plugin för Vite för att stödja JSX och andra React-specifika funktioner
 
 ## Den här README.md ger en enkel översikt av projektet och instruktioner för att komma igång - (kan fyllas i mer ...)
 
