@@ -17,9 +17,9 @@
 3. npm start run dev
 
 ## Teknologier
-React
-React Router
-Tailwind CSS (ihop med DaisyUI)
+React ,
+React Router ,
+Tailwind CSS (ihop med DaisyUI) , 
 JSON-server (eller backend API i framtiden)
 
 ## Den här README.md ger en enkel översikt av projektet och instruktioner för att komma igång - (kan fyllas i mer ...)
